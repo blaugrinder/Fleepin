@@ -1,0 +1,155 @@
+.home {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 70px; /* pour compenser la navbar fixe */
+}
+
+.home-left,
+.home-right {
+  flex: 1;
+  height: 100%;
+}
+
+.home-left {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.home-title {
+  font-size: 25rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.home-description {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.home-right {
+    padding-top: 50px;
+  background-color: #dcdcdc;
+}
+
+.pc-diagonal-carousel {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-top: 40px;
+}
+
+.pc-img {
+  position: absolute;
+  width: 280px;
+  opacity: 0.4;
+  filter: blur(3px);
+  transition: all 0.8s ease;
+  z-index: 1;
+}
+
+.pc-front {
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 1;
+  filter: none;
+  z-index: 4;
+}
+
+.pc-top-left {
+  left: 30%;
+  top: 20%;
+  transform: translate(-50%, -50%) scale(0.85);
+  z-index: 2;
+}
+
+.pc-top-back {
+  left: 50%;
+  top: 8%;
+  transform: translate(-50%, -50%) scale(0.8);
+  z-index: 1;
+}
+
+.pc-top-right {
+  left: 70%;
+  top: 20%;
+  transform: translate(-50%, -50%) scale(0.85);
+  z-index: 2;
+}
+
+.pc-showcase {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pc-logo-placeholder {
+  margin-top: 140px;
+  width: 150px;
+  height: 60px;
+}
+
+.brand-img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.home-left {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  margin-top: -40px;
+  color: #222;
+  font-weight: bold;
+}
+
+.home-story {
+  font-size: 1.3rem;
+  color: #444;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+
