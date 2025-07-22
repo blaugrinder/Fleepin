@@ -1,16 +1,60 @@
 .why-choose-us {
   padding: 100px 60px;
-  background: linear-gradient(135deg, #F0F0F0, #DCDCDC);
+  background: linear-gradient(-45deg, #0B00D0, #2F0A6F, #C10B28, #0B00D0);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   text-align: center;
   min-height: 100vh;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .why-title {
   font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 60px;
-  color: #222;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
 }
+
+.title-divider {
+  width: 100px;
+  height: 4px;
+  margin: 0 auto 60px;
+  border-radius: 2px;
+
+  background: linear-gradient(270deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #33ff00,
+    #00ffff,
+    #3300ff,
+    #ff00cc,
+    #ff0000
+  );
+  background-size: 1600% 100%;
+  animation: rgbFlow 5s linear infinite;
+}
+
+@keyframes rgbFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
 
 .values-container {
   display: flex;
@@ -21,13 +65,12 @@
 }
 
 .value-card {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 40px 30px;
   flex: 1;
   min-width: 280px;
@@ -40,7 +83,7 @@
 
 .value-card:hover {
   transform: translateY(-12px) scale(1.01);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
 .value-title {
@@ -48,7 +91,7 @@
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 10px;
-  color: #000;
+  color: #fff;
 }
 
 .underline-ultra,
@@ -63,7 +106,7 @@
   background-color: #2D355B;
 }
 .underline-ruby {
-  background-color: #E12C2A;
+  background-color: #FF2E2C;
 }
 .underline-dlss {
   background-color: #8CC328;
@@ -74,19 +117,25 @@
   padding: 0;
   margin-bottom: 30px;
   text-align: left;
-  color: #222;
+  color: #ddd;
 }
 
 .value-list li {
   font-size: 1rem;
   margin-bottom: 10px;
-  color: #333;
+  color: #eee;
 }
 
 .value-logo {
   width: 80px;
   height: auto;
   opacity: 0.85;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.value-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
 }
 
 .dlss-logo {
@@ -106,7 +155,7 @@
   border-top-color: #2D355B;
 }
 .value-card:nth-child(2) {
-  border-top-color: #E12C2A;
+  border-top-color: #FF2E2C;
 }
 .value-card:nth-child(3) {
   border-top-color: #8CC328;
