@@ -2,7 +2,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-  margin-top: 70px;
+  padding-top: 70px;
   overflow: hidden;
   background: linear-gradient(-45deg, #0B00D0, #2F0A6F, #C10B28, #0B00D0);
   background-size: 400% 400%;
