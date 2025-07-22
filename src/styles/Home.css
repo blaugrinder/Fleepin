@@ -2,8 +2,19 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  margin-top: 70px;
   overflow: hidden;
-  margin-top: 70px; /* pour compenser la navbar fixe */
+  background: linear-gradient(-45deg, #0B00D0, #2F0A6F, #C10B28, #0B00D0);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .home-left,
@@ -13,31 +24,34 @@
 }
 
 .home-left {
-  background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 60px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .home-title {
-  font-size: 25rem;
-  margin-bottom: 20px;
-  color: #222;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  margin-top: -40px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
-.home-description {
-  font-size: 1.25rem;
-  color: #555;
-  line-height: 1.6;
+.home-story {
+  font-size: 1.3rem;
+  color: #eeeeee;
+  line-height: 1.8;
   max-width: 600px;
+  margin-bottom: 30px;
+  text-align: justify;
 }
 
 .home-right {
-    padding-top: 50px;
-  background-color: #dcdcdc;
+  padding-top: 50px;
 }
 
 .pc-diagonal-carousel {
@@ -86,17 +100,11 @@
   z-index: 2;
 }
 
-.pc-showcase {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .pc-logo-placeholder {
   margin-top: 140px;
-  width: 150px;
-  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .brand-img {
@@ -118,40 +126,6 @@
   opacity: 0;
   transform: translateY(10px);
 }
-
-.home-left {
-  background-color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px;
-  box-sizing: border-box;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.home-title {
-  font-size: 3rem;
-  margin-bottom: 30px;
-  margin-top: -40px;
-  color: #222;
-  font-weight: bold;
-}
-
-.home-story {
-  font-size: 1.3rem;
-  color: #444;
-  line-height: 1.8;
-  max-width: 600px;
-  margin-bottom: 30px;
-  text-align: justify;
-}
-
-.home-button:hover {
-  background-color: #0056b3;
-}
-
 
 /* Tablettes */
 @media (max-width: 1024px) {
@@ -187,11 +161,13 @@
     transform: translate(-50%, -50%) scale(1.6);
   }
 
-  .pc-logo-placeholder {
-    margin-top: 80px;
-    width: 120px;
-    height: auto;
-  }
+ .pc-logo-placeholder {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 
   .brand-img {
     width: 120px;
@@ -246,10 +222,13 @@
     transform: translate(-50%, -50%) scale(0.65);
   }
 
-  .pc-logo-placeholder {
-    margin-top: 60px;
-    width: 100px;
-  }
+ .pc-logo-placeholder {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 
   .brand-img {
     width: 100px;
