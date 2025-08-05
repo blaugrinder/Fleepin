@@ -9,7 +9,7 @@ function WhyChooseUs() {
   return (
     <section className="why-choose-us">
       <h2 className="why-title">Why choose us?</h2>
-      <div className="title-divider" data-aos="fade-up"></div>
+      <div className="title-divider" data-aos="zoom-in"></div>
 
       <div className="values-container">
         {/* PERFORMANCE */}
