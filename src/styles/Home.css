@@ -4,7 +4,7 @@
   height: 100vh;
   padding-top: 70px;
   overflow: hidden;
-  background: linear-gradient(-45deg, #0B00D0, #2F0A6F, #C10B28, #0B00D0);
+  background-color: #e8e9f0;
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   color: white;
@@ -37,13 +37,13 @@
   font-size: 3rem;
   margin-bottom: 30px;
   margin-top: -40px;
-  color: #ffffff;
+  color: #000000;
   font-weight: bold;
 }
 
 .home-story {
   font-size: 1.3rem;
-  color: #eeeeee;
+  color: #000000;
   line-height: 1.8;
   max-width: 600px;
   margin-bottom: 30px;
