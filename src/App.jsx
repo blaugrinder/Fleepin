@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 import Header from './components/Header'
 import Home from './components/Home'
 import WhyChooseUs from './components/WhyChooseUs'
-import Stats from './components/StatsPage'
+import Testimonials from './components/TestimonialsPage'
 
 function App() {
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
       <main>
         <Home />
         <WhyChooseUs />
-        <Stats />
+        <Testimonials />
       </main>
     </>
   )
