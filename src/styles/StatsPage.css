@@ -60,3 +60,29 @@
   transform: translateX(-50%);
   background: linear-gradient(to bottom, #D96679, #F6C248, #EA4F5D);
 }
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    width: 90%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .stat-block {
+    width: 100%;
+    height: 150px;
+  }
+  
+  .line {
+    display: none;
+  }
+}
