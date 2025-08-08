@@ -1,50 +1,179 @@
-.testimonials-page {
-  min-height: 100vh;
-  background-color: #E8E9F0;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+:root{
+  --accent-a: #00f0ff;
+  --accent-b: #ff2e8a;
+  --card-bg: rgba(8,10,20,0.68);
+  --glass-blur: 18px;
 }
 
+/* Conteneur + fond SVG circuit animé (plus dense et subtil) */
+.testimonials-carousel {
+  position: relative;
+  padding: 70px 20px;
+  text-align: center;
+  color: var(--accent-a);
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(6,8,25,0.95), rgba(12,10,30,0.98));
+}
+
+/* Fond circuit animé (inline SVG, taille répétée) */
+.testimonials-carousel::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><rect width='240' height='240' fill='none'/><g stroke='%2300F0FF' stroke-opacity='0.08' stroke-width='1' fill='none'><path d='M10 20 H70 V40 H110 V20 H160 V60 H230' stroke-dasharray='180' stroke-dashoffset='180'><animate attributeName='stroke-dashoffset' values='180;0' dur='6s' repeatCount='indefinite'/></path><circle cx='10' cy='20' r='3' fill='%23FF2E8A' fill-opacity='0.04'><animate attributeName='r' values='3;6;3' dur='3s' repeatCount='indefinite'/></circle><circle cx='70' cy='40' r='2.5' fill='%2300F0FF' fill-opacity='0.04'/></g></svg>");
+  background-size: 240px;
+  background-repeat: repeat;
+  opacity: 0.95;
+  mix-blend-mode: screen;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(2px) saturate(110%);
+}
+
+/* Overlay de lumière subtile pour vibrance */
+.testimonials-carousel::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 200px at 10% 10%, rgba(0,240,255,0.06), transparent 10%),
+              radial-gradient(500px 180px at 90% 80%, rgba(255,46,138,0.05), transparent 12%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Contenu au-dessus */
+.testimonials-carousel > * { position: relative; z-index: 1; }
+
+/* TITRE */
 .title {
-  font-size: 36px;
-  font-weight: bold;
-  color: #2F0A6F;
-  margin-bottom: 50px;
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-a);
+  text-shadow: 0 0 14px rgba(0,240,255,0.14), 0 0 32px rgba(255,46,138,0.06);
 }
 
-.testimonials-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1100px;
-  width: 100%;
+/* CARD (glass + panel tech) */
+.swiper-slide {
+  --pad: 24px;
+  position: relative;
+  width: 340px;
+  padding: var(--pad);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  overflow: visible;
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease;
+  color: #e6eefc;
 }
 
-.testimonial-card {
-  background-color: white;
-  border-radius: 12px;
-  padding: 30px;
-  width: 280px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 0 transparent;
+/* Inner wrapper for content spacing & z-order */
+.card-inner{
+  position: relative;
+  z-index: 2;
 }
 
-.testimonial-card:hover {
-  transform: scale(1.05);
+/* Animated neon frame (thin) — using mask to keep interior clean */
+.swiper-slide::before{
+  content: "";
+  position: absolute;
+  inset: -2px; /* extend slightly outside to create frame */
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b), var(--accent-a));
+  background-size: 200% 200%;
+  filter: drop-shadow(0 0 10px rgba(0,240,255,0.14));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: frameFlow 5s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.95;
+  transform: translateZ(0);
+  /* déphasage par slide : passe --i (index) depuis React */
+  animation-delay: calc(var(--i,0) * -0.45s);
 }
 
-.comment {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 15px;
-  line-height: 1.5;
+/* Accélère au hover / focus */
+.swiper-slide:hover::before,
+.swiper-slide:focus-within::before {
+  animation-duration: 2.2s;
+  opacity: 1;
 }
 
-.author {
-  font-weight: bold;
-  color: #C10B28;
-  font-size: 14px;
+/* active slide pop */
+.swiper-slide-active{
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.6), 0 0 28px rgba(0,240,255,0.06);
+}
+
+/* comment text */
+.comment{
+  font-size: 15px;
+  color: #dbe8ff;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-style: normal;
+  letter-spacing: 0.1px;
+  hyphens: auto;
+}
+
+/* author + chip */
+.author{
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent-b);
+  text-shadow: 0 0 6px rgba(255,46,138,0.14);
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.chip{
+  display: inline-block;
+  font-size: 12px;
+  color: rgba(230,230,255,0.9);
+  background: rgba(255,255,255,0.03);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: inset 0 -2px 8px rgba(0,0,0,0.25);
+}
+
+/* subtle separator line */
+.card-inner::after{
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  margin: 14px auto 8px;
+  border-radius: 2px;
+}
+
+/* FRAME ANIMATION */
+@keyframes frameFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ACCESSIBILITY: réduit les animations si demandé */
+@media (prefers-reduced-motion: reduce) {
+  .swiper-slide::before { animation: none; opacity: 0.7; }
+  .testimonials-carousel::before { animation: none; }
+  .swiper-slide, .swiper-slide-active { transition: none; transform: none; }
+}
+
+/* Responsive tweak */
+@media (max-width: 700px) {
+  .title { font-size: 28px; margin-bottom: 24px; }
+  .swiper-slide { width: 86%; padding: 18px; border-radius: 14px; }
 }
