@@ -11,26 +11,17 @@ import logoCORSAIR from '../assets/logoCORSAIR.png';
 import logoDELL from '../assets/logoDELL.png';
 import logoLENOVO from '../assets/logoLENOVO.png';
 
-const ANIMATION_CYCLE = 3000; // ms
-const FADE_TRANSITION = 500; // ms
+const ANIMATION_CYCLE = 4000; // ms
 const BRAND_NAMES = ['ASUS', 'CORSAIR', 'DELL', 'LENOVO'];
 const images = [ASUS, CORSAIR, DELL, LENOVO];
 const logos = [logoASUS, logoCORSAIR, logoDELL, logoLENOVO];
 
 function RotatingPC() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // start fade-out
-      setFade(false);
-
-      // after FADE_TRANSITION, the logo change and fade-in
-      setTimeout(() => {
-        setActiveIndex((prev) => (prev + 1) % images.length);
-        setFade(true);
-      }, FADE_TRANSITION);
+      setActiveIndex((prev) => (prev + 1) % images.length);
     }, ANIMATION_CYCLE);
 
     return () => clearInterval(interval);
@@ -40,13 +31,13 @@ function RotatingPC() {
     const relative = (index - activeIndex + images.length) % images.length;
     switch (relative) {
       case 0:
-        return 'pc-front';
+        return 'pc-center';
       case 1:
-        return 'pc-top-left';
+        return 'pc-right';
       case 2:
-        return 'pc-top-back';
+        return 'pc-back';
       case 3:
-        return 'pc-top-right';
+        return 'pc-left';
       default:
         return '';
     }
@@ -54,7 +45,7 @@ function RotatingPC() {
 
   return (
     <div className="pc-showcase">
-      <div className="pc-diagonal-carousel">
+      <div className="pc-carousel">
         {images.map((img, index) => (
           <img
             key={index}
@@ -69,7 +60,7 @@ function RotatingPC() {
         <img
           src={logos[activeIndex]}
           alt={`${BRAND_NAMES[activeIndex]} brand logo`}
-          className={`brand-img ${fade ? 'fade-in' : 'fade-out'}`}
+          className="brand-img"
         />
       </div>
     </div>
