@@ -89,7 +89,10 @@
   font-size: 22px;
   color: #000;
   filter: grayscale(100%) brightness(0.7);
-  transition: filter 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  transition:
+    filter 0.3s ease,
+    transform 0.2s ease,
+    color 0.3s ease;
   cursor: pointer;
 }
 
@@ -98,18 +101,19 @@
   transform: scale(1.15);
 }
 
-.social-icons a[href*="facebook.com"] .social-icon:hover {
+.social-icons a[href*='facebook.com'] .social-icon:hover {
   color: #3b5998;
 }
 
 .social-icon-img {
   height: 22px;
   filter: grayscale(100%) brightness(0.7);
-  transition: filter 0.3s ease, transform 0.2s ease;
+  transition:
+    filter 0.3s ease,
+    transform 0.2s ease;
 }
 
 .social-icon-img:hover {
   filter: grayscale(0%) brightness(1.2);
   transform: scale(1.1);
 }
-

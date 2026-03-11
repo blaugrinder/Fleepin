@@ -1,0 +1,80 @@
+[
+  {
+    "id": "performance",
+    "title": "PERFORMANCE",
+    "logo": "ULTRA",
+    "className": "ultra-logo",
+    "underlineClass": "underline-ultra",
+    "items": [
+      {
+        "title": "Speed as a priority",
+        "description": "We ensure every machine delivers lightning-fast boot times, application responsiveness, and multitasking capabilities."
+      },
+      {
+        "title": "Consistency under pressure",
+        "description": "Systems are tested under heavy load to guarantee stable performance even in the most demanding tasks."
+      },
+      {
+        "title": "Tailored power",
+        "description": "Our builds are optimized for your specific needs, whether it's gaming, video editing, or development."
+      },
+      {
+        "title": "Silent and cool",
+        "description": "High-efficiency cooling keeps components running at peak performance without overheating or noise."
+      }
+    ],
+    "aosDelay": 0
+  },
+  {
+    "id": "reliability",
+    "title": "RELIABILITY",
+    "logo": "RUBY",
+    "className": "value-logo",
+    "underlineClass": "underline-ruby",
+    "items": [
+      {
+        "title": "Built to last",
+        "description": "We use high-end components designed for long-term durability and performance over time."
+      },
+      {
+        "title": "Strict quality control",
+        "description": "Every product goes through a thorough testing protocol before delivery."
+      },
+      {
+        "title": "Minimal downtime",
+        "description": "We aim for zero failure by assembling systems with only proven, industry-grade parts."
+      },
+      {
+        "title": "Peace of mind",
+        "description": "Backed by comprehensive warranty and expert support ready to assist when needed."
+      }
+    ],
+    "aosDelay": 100
+  },
+  {
+    "id": "innovation",
+    "title": "INNOVATION",
+    "logo": "DLSS",
+    "className": "dlss-logo",
+    "underlineClass": "underline-dlss",
+    "items": [
+      {
+        "title": "Always ahead",
+        "description": "We constantly integrate the latest technologies into our builds, keeping your setup future-ready."
+      },
+      {
+        "title": "Smart optimization",
+        "description": "Our configurations leverage AI-driven tools for faster processing and smarter performance."
+      },
+      {
+        "title": "Inspired design",
+        "description": "Beyond specs, our PCs bring visual sophistication and clean design aesthetics."
+      },
+      {
+        "title": "Immersive experience",
+        "description": "Support for AR/VR, DLSS, and real-time rendering ensures a new level of realism."
+      }
+    ],
+    "aosDelay": 200
+  }
+]

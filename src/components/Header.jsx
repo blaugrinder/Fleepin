@@ -1,8 +1,7 @@
-import { FaFacebookF } from 'react-icons/fa'
-import '../styles/Header.css'
-import logo from '../assets/logo.png'
-import xLogo from '../assets/x-logo.svg'
-
+import { FaFacebookF } from 'react-icons/fa';
+import '../styles/Header.css';
+import logo from '../assets/logo.png';
+import xLogo from '../assets/x-logo.svg';
 
 function Header() {
   return (
@@ -20,16 +19,26 @@ function Header() {
         </nav>
 
         <div className="social-icons">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Facebook"
+          >
             <FaFacebookF className="social-icon" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on X"
+          >
             <img src={xLogo} alt="X logo" className="social-icon-img" />
           </a>
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

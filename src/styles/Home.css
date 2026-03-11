@@ -12,9 +12,15 @@
 }
 
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .home-left,
@@ -114,7 +120,9 @@
   margin: 0 auto;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .fade-in {
@@ -161,13 +169,12 @@
     transform: translate(-50%, -50%) scale(1.6);
   }
 
- .pc-logo-placeholder {
-  margin-top: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
+  .pc-logo-placeholder {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   .brand-img {
     width: 120px;
@@ -222,13 +229,12 @@
     transform: translate(-50%, -50%) scale(0.65);
   }
 
- .pc-logo-placeholder {
-  margin-top: 60px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
+  .pc-logo-placeholder {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   .brand-img {
     width: 100px;
