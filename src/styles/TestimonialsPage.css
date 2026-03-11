@@ -5,14 +5,24 @@
   --glass-blur: 18px;
 }
 
-/* Conteneur + fond SVG circuit animé (plus dense et subtil) */
 .testimonials-carousel {
   position: relative;
   padding: 70px 20px;
   text-align: center;
   color: var(--accent-a);
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(6, 8, 25, 0.95), rgba(12, 10, 30, 0.98));
+  background: linear-gradient(135deg, rgba(6, 8, 25, 0.98), rgba(12, 10, 30, 0.99));
+  animation: bgShift 8s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+  0%,
+  100% {
+    background: linear-gradient(135deg, rgba(6, 8, 25, 0.98), rgba(12, 10, 30, 0.99));
+  }
+  50% {
+    background: linear-gradient(-135deg, rgba(8, 12, 35, 0.98), rgba(10, 14, 32, 0.99));
+  }
 }
 
 /* Fond circuit animé (inline SVG, taille répétée) */
@@ -48,25 +58,38 @@
   z-index: 1;
 }
 
-/* TITRE */
+/* TITRE avec animations spectaculaires */
 .title {
-  font-size: 40px;
-  margin-bottom: 40px;
-  font-weight: 700;
+  font-size: 44px;
+  margin-bottom: 50px;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--accent-a);
-  text-shadow:
-    0 0 14px rgba(0, 240, 255, 0.14),
-    0 0 32px rgba(255, 46, 138, 0.06);
-}
-
-/* CARD (glass + panel tech) */
-.swiper-slide {
-  --pad: 24px;
-  position: relative;
-  width: 340px;
-  padding: var(--pad);
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b), var(--accent-a));
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleShine 4s ease infinite;
+  text-shadow: 0 0 40px
+    rgba(
+      with enhanced animation * / .swiper-slide {--pad: 24px; position: relative; width: 340px;
+        padding: var(--pad) ; border-radius: 18px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(100, 200, 255, 0.02)) ;
+        border: 1.5px solid rgba(0, 240, 255, 0.2) ; backdrop-filter: blur(var(--glass-blur))
+        ; -webkit-backdrop-filter: blur(var(--glass-blur)) ; box-shadow: 0 6px 30px
+        rgba(2, 6, 23, 0.6),
+      inset 0 1px 15px rgba(0, 240, 255, 0.1),
+      0 0 30px rgba(0, 240, 255, 0.1) ; overflow: visible; transition: all 0.45s
+        cubic-bezier(0.2, 0.9, 0.2, 1) ; color: #e6eefc; animation: cardEntrance 0.8s
+        cubic-bezier(0.34, 1.56, 0.64, 1) ;} @keyframes cardEntrance {0% {opacity: 0;
+        transform: translateY(30px) scale(0.9) ;} 100% {opacity: 1; transform: translateY(0)
+        scale(1) ;}} .swiper-slide: hover {border-color: rgba(0, 240, 255, 0.6) ; box-shadow: 0 12px
+        50px rgba(2, 6, 23, 0.8),
+      inset 0 1px 20px rgba(0, 240, 255, 0.2),
+      0 0 50px rgba(0, 240, 255, 0.3),
+      0 0 80px rgba(255, 46, 138, 0.1) ; transform: translateY(-10px) scale(1.02)-pad
+    );
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
   border: 1px solid rgba(255, 255, 255, 0.04);
